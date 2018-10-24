@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ViviArt.MandalaCoreChart"
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout StyleClass="container">
+                <StackLayout BackgroundColor="White">
+                    <Label Text="{Binding CoreGoalTitle}" FontSize="Large"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="10"/>
+                <StackLayout BackgroundColor="White">
+                    <Label Text="주간" FontSize="Medium"/>
+                    <microcharts:ChartView 
+                        HeightRequest="250" 
+                        BackgroundColor="White" 
+                        Chart="{Binding WeekChart}"
+                    />
+                </StackLayout>
+                
+                <BoxView HeightRequest="10"/>
+                <StackLayout BackgroundColor="White">
+                    <Label Text="월간" FontSize="Medium"/>
+                    <microcharts:ChartView 
+                        HeightRequest="250" 
+                        BackgroundColor="White" 
+                        Chart="{Binding MonthChart}"
+                    />
+                </StackLayout>
+                
+                <BoxView HeightRequest="10"/>
+                <StackLayout BackgroundColor="White">
+                    <Label Text="연간" FontSize="Medium"/>
+                    <microcharts:ChartView 
+                        HeightRequest="250"
+                        BackgroundColor="White" 
+                        Chart="{Binding YearChart}"
+                    />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

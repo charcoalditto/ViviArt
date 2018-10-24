@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViviArt.Android", "ViviArt.Android\ViviArt.Android.csproj", "{8D705CB4-7595-4855-8DE2-8312C799C24B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViviArt", "ViviArt\ViviArt.csproj", "{906C3DDA-6D6E-4CAC-8EC4-C2CA57A7625F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibUnitTest", "LibUnitTest\LibUnitTest.csproj", "{6DA5A04C-549F-4B1A-B9E0-0778E39C3822}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D705CB4-7595-4855-8DE2-8312C799C24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D705CB4-7595-4855-8DE2-8312C799C24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D705CB4-7595-4855-8DE2-8312C799C24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D705CB4-7595-4855-8DE2-8312C799C24B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{906C3DDA-6D6E-4CAC-8EC4-C2CA57A7625F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{906C3DDA-6D6E-4CAC-8EC4-C2CA57A7625F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{906C3DDA-6D6E-4CAC-8EC4-C2CA57A7625F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{906C3DDA-6D6E-4CAC-8EC4-C2CA57A7625F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA5A04C-549F-4B1A-B9E0-0778E39C3822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA5A04C-549F-4B1A-B9E0-0778E39C3822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA5A04C-549F-4B1A-B9E0-0778E39C3822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA5A04C-549F-4B1A-B9E0-0778E39C3822}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

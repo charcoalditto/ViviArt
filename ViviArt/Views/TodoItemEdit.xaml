@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ViviArt.TodoItemEdit"
+    xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+    >
+    <ContentPage.Content>
+        <StackLayout StyleClass="container">
+            <Label Text="투두 만들기" FontSize="Large"/>
+            <BoxView HeightRequest="1" Color="LightGray" />
+            
+            <input:FormView>
+                <input:AdvancedEntry 
+                    Text="{Binding MyItem.Title}"
+                    Title="Title"
+                    Annotation="Text"
+                    />
+                <input:AdvancedEntry 
+                    Text="{Binding MyItem.Why}"
+                    Title="Why"
+                    Annotation="Text"
+                    />
+                <input:AdvancedEntry 
+                    Text="{Binding MyItem.How}"
+                    Title="How"
+                    Annotation="Text"
+                    />
+                <input:AdvancedEntry 
+                    Text="{Binding MyItem.Plan}"
+                    Title="Plan"
+                    Annotation="Text"
+                    />
+                <input:CheckBox Text="날짜 선택하지않음" Type="Box" IsChecked="{Binding NoExpiryDtCheck}"/>
+                <DatePicker 
+                    Date="{Binding MyItem.ExpiryDt, Converter={StaticResource StringToDateTime}}"
+                    Format="yyyy-MM-dd"
+                    IsEnabled="{Binding MyItem.NoExpiryDt, Converter={StaticResource BoolReverseConverter}}"
+                />
+            </input:FormView>
+            <Button 
+                Text="{Binding SubmitText}"
+                BackgroundColor="#0190d5" 
+                CornerRadius="20" 
+                TextColor="White"
+                Clicked="Submit_Clicked"
+            />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

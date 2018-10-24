@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="launcher_background">#FFFFFF</color>
+    <color name="colorPrimary">#0190d5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorSkyStart">#00edd2</color>
+    <color name="colorSkyEnd">#00b0e8</color>
+    <color name="colorSkyText">#0190d5</color>
+    <color name="colorTransparent">#00000000</color>
+</resources>

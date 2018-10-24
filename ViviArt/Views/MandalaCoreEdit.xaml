@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ViviArt.MandalaCoreEdit"
+    xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+    >
+    <ContentPage.Content>
+        <StackLayout StyleClass="container">
+            <Label Text="핵심목표" FontSize="Large"/>
+            <BoxView HeightRequest="1" Color="LightGray" />
+            <input:FormView>
+                <input:AdvancedEntry 
+                    Text="{Binding MyItem.Title}"
+                    Title="Title"
+                    Annotation="Text"
+                    />
+            </input:FormView>
+            <BoxView/>
+            <Button 
+                Text="{Binding SubmitText}"
+                BackgroundColor="#0190d5" 
+                CornerRadius="20" 
+                TextColor="White"
+                Clicked="Submit_Clicked"
+            />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

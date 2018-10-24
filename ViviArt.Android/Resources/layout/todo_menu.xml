@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <ImageButton
+        style="@style/menu_image"
+        android:id="@+id/todoBtnCheck"
+        android:src="@drawable/checked" />
+    <ImageButton
+        style="@style/menu_image"
+        android:id="@+id/todoBtnAdd"
+        android:src="@drawable/add" />
+    <ImageButton
+        style="@style/menu_image"
+        android:id="@+id/todoBtnEdit"
+        android:src="@drawable/edit" />
+    <ImageButton
+        style="@style/menu_image"
+        android:id="@+id/todoBtnDelete"
+        android:src="@drawable/delete" />
+    <FrameLayout
+        style="@style/menu_line" />
+    <Button
+        style="@style/menu_date"
+        android:id="@+id/todoBtnDate"
+        android:text="DATE" />
+</LinearLayout>

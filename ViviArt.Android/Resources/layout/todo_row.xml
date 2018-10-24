@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="32dip"
+    android:background="#CCFFFFFF"
+    android:id="@+id/todoRow">
+    <FrameLayout
+        android:id="@+id/todoRedLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/red_gradient"
+        android:visibility="gone"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" />
+    <TextView
+        android:id="@+id/todoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/colorSkyText"
+        android:singleLine="true"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:text="Heading" />
+</RelativeLayout>

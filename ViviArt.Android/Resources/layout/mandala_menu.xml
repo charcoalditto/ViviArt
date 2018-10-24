@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            style="@style/menu_button"
+            android:id="@+id/mandalaBtnDay"
+            android:text="D" />
+        <Button
+            style="@style/menu_button"
+            android:id="@+id/mandalaBtnWeek"
+            android:text="W" />
+        <Button
+            style="@style/menu_button"
+            android:id="@+id/mandalaBtnMonth"
+            android:text="M" />
+        <Button
+            style="@style/menu_button"
+            android:id="@+id/mandalaBtnYear"
+            android:text="Y" />
+        <FrameLayout
+            style="@style/menu_line" />
+        <ImageButton
+            style="@style/menu_image"
+            android:id="@+id/mandalaBtnDateBefore"
+            android:src="@drawable/before" />
+        <Button
+            style="@style/menu_date"
+            android:id="@+id/mandalaBtnDate"
+            android:text="DATE" />
+        <ImageButton
+            style="@style/menu_image"
+            android:id="@+id/mandalaBtnDateNext"
+            android:src="@drawable/next" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            style="@style/menu_image"
+            android:id="@+id/mandalaBtnCheck"
+            android:src="@drawable/checked" />
+        <ImageButton
+            style="@style/menu_image"
+            android:id="@+id/mandalaBtnEdit"
+            android:src="@drawable/edit" />
+        <ImageButton
+            style="@style/menu_image"
+            android:id="@+id/mandalaBtnDelete"
+            android:src="@drawable/delete" />
+        <ImageButton
+            style="@style/menu_image"
+            android:id="@+id/mandalaBtnChart"
+            android:src="@drawable/chart" />
+    </LinearLayout>
+</LinearLayout>

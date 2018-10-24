@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string name="todo_widgetname">todo_widgetname</string>
+    <string name="manalaart_widgetname">manalaart_widgetname</string>
+
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">AppWidgetListView</string>
+
+
+
+    <string name="app_name">WidgetListView1</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="empty_string">Empty View</string>
+</resources>

@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    android:orientation="vertical">
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/mandala_menu" />
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/mandalaGoal00"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal01"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal02"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal10"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal11"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal12"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal20"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal21"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal22"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/mandalaGoal03"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal04"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal05"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal13"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal14"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal15"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal23"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal24"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal25"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/mandalaGoal06"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal07"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal08"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal16"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal17"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal18"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal26"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal27"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal28"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/mandalaGoal30"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal31"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal32"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal40"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal41"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal42"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal50"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal51"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal52"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/mandalaGoal33"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal34"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal35"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal43"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal44"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal45"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal53"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal54"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal55"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/mandalaGoal36"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal37"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal38"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal46"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal47"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal48"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal56"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal57"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal58"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/mandalaGoal60"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal61"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal62"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal70"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal71"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal72"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal80"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal81"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal82"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/mandalaGoal63"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal64"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal65"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal73"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal74"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal75"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal83"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal84"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal85"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/mandalaGoal66"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal67"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal68"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal76"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal77"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal78"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal86"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal87"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+        <Button
+            android:id="@+id/mandalaGoal88"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/mandalaEmptyView"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="empty_string"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:visibility="gone" />
+</LinearLayout>
