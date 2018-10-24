@@ -10,7 +10,7 @@ namespace ViviArt.Droid
         public void Close()
         {
             var activity = (Activity)Forms.Context;
-            activity.FinishAffinity();
+            activity.FinishAffinity();    
         }
     }
 }

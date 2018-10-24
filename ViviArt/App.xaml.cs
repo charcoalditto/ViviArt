@@ -9,23 +9,10 @@ namespace ViviArt
 {
     public partial class App : Application
     {
-        public static Page CustomPage = null;
-
         public App()
         {
             InitializeComponent();
-            if (CustomPage == null)
-            {
-                MainPage = new LoadingPage();    
-                Task.Run(async () => {
-                    await Task.Delay(1000);
-                    DependencyService.Get<ICloseApplication>().Close();
-                });
-            }
-            else
-            {
-                MainPage = CustomPage; 
-            }
+            MainPage = new LoadingPage();
         }
 
         protected override void OnStart()

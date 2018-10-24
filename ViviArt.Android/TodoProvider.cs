@@ -219,9 +219,8 @@ namespace ViviArt.Droid
         public void EditTodo(Context context, int appWidgetId, int todoID)
         {
             Intent intent = new Intent(context, typeof(MainActivity));
-            var newPage = new TodoItemEdit();
-            newPage.viewModel.ItemID = todoID;
-            App.CustomPage = newPage;
+            intent.SetAction(OPEN_TODO_EDIT);
+            intent.PutExtra(EXTRA_ID, todoID);
 
 
             TodoItemEdit.SuccessCallback = () =>
@@ -235,15 +234,13 @@ namespace ViviArt.Droid
         public void AddTodo(Context context, int appWidgetId, Bundle extras)
         {
             Intent intent = new Intent(context, typeof(MainActivity));
-
-            var newPage = new TodoItemEdit();
-            App.CustomPage = newPage;
+            intent.SetAction(OPEN_TODO_ADD);
+            intent.PutExtras(extras);
 
             TodoItemEdit.SuccessCallback = () =>
             {
                 AppWidgetManager.GetInstance(context).NotifyAppWidgetViewDataChanged(appWidgetId, Resource.Id.todoListView);
                 Xamarin.Forms.DependencyService.Get<ICloseApplication>().Close();
-                App.CustomPage = null;
             };
             context.StartActivity(intent);
         }

@@ -174,13 +174,13 @@ namespace ViviArt.Droid
         {
             AppWidgetManager appWidgetManager = AppWidgetManager.GetInstance(context);
             Bundle options = appWidgetManager.GetAppWidgetOptions(appWidgetId);
-            options.PutString(PREF_TODAY, today.ToString1());
+            options.PutString(PREF_TODAY, today.ToString2());
             appWidgetManager.UpdateAppWidgetOptions(appWidgetId, options);
         }
         public static DateTime GetTodayPref(Context context, int appWidgetId)
         {
             Bundle options = AppWidgetManager.GetInstance(context).GetAppWidgetOptions(appWidgetId);
-            return options.GetString(PREF_TODAY).ToDateTime1();
+            return options.GetString(PREF_TODAY, DateTime.Now.ToString2()).ToDateTime2();
         }
 
         /*
@@ -199,8 +199,12 @@ namespace ViviArt.Droid
 
             var cg = CoreGoal.GetItem(corePosition);
             var mg = MiddleGoal.GetItem(cg?.ID ?? -1, middlePosition);
-            DateTime today = GetTodayPref(context, appWidgetId);
-            intent.PutExtra(EXTRA_TODAY, today.ToString1());
+            var today = GetTodayPref(context, appWidgetId);
+            intent.PutExtra(EXTRA_MIDDLE_ID, mg?.ID ?? -1);
+            intent.PutExtra(EXTRA_CORE_ID, cg?.ID ?? -1);
+            intent.PutExtra(EXTRA_MIDDLE_POSITION, middlePosition);
+            intent.PutExtra(EXTRA_CORE_POSITION, corePosition);
+            intent.PutExtra(EXTRA_TODAY, today.ToString2());
 
             if (IsCoreGoal(middlePosition))
             {
@@ -211,15 +215,7 @@ namespace ViviArt.Droid
                 } 
                 else
                 {
-                    var newPage = new MandalaCoreChart();
-                    var myInput = new MandalaCoreChartInput()
-                    {
-                        CoreGoalID = cg?.ID ?? -1,
-                        Today = GetTodayPref(context, appWidgetId)
-                    };
-                    newPage.viewModel.InputSet = myInput;
-                    App.CustomPage = newPage;
-                    context.StartActivity(intent);
+                    intent.SetAction(OPEN_MANDALA_CORE_CHART);
                 }
             } 
             else
@@ -231,17 +227,10 @@ namespace ViviArt.Droid
                 }
                 else
                 {
-                    var newPage = new MandalaMiddleChart();
-                    var myInput = new MandalaMiddleChartInput()
-                    {
-                        MiddleGoalID = mg?.ID ?? -1,
-                        Today = GetTodayPref(context, appWidgetId)
-                    };
-                    newPage.viewModel.InputSet = myInput;
-                    App.CustomPage = newPage;
-                    context.StartActivity(intent);
+                    intent.SetAction(OPEN_MANDALA_MIDDLE_CHART);
                 }
             }
+            context.StartActivity(intent);
         }
         public void PartiallyReloadRow(Context context, int appWidgetId, int corePosition, int middlePosition)
         {
@@ -253,52 +242,51 @@ namespace ViviArt.Droid
         public void EditMandala(Context context, int appWidgetId, int corePosition, int middlePosition)
         {
             Intent intent = new Intent(context, typeof(MainActivity));
+
             var cg = CoreGoal.GetItem(corePosition);
             var mg = MiddleGoal.GetItem(cg?.ID ?? -1, middlePosition);
+            var today = GetTodayPref(context, appWidgetId);
+            intent.PutExtra(EXTRA_MIDDLE_ID, mg?.ID ?? -1);
+            intent.PutExtra(EXTRA_CORE_ID, cg?.ID ?? -1);
+            intent.PutExtra(EXTRA_MIDDLE_POSITION, middlePosition);
+            intent.PutExtra(EXTRA_CORE_POSITION, corePosition);
+            intent.PutExtra(EXTRA_TODAY, today.ToString2());
 
             if (IsCoreGoal(middlePosition))
             {
-                if (cg == null){
-                    var newPage = new MandalaCoreEdit();
-                    newPage.viewModel.MyItem.Position = corePosition;
-                    App.CustomPage = newPage;
+                if (cg == null)
+                {
+                    intent.SetAction(OPEN_MANDALA_CORE_ADD);
                 }
                 else
                 {
-                    var newPage = new MandalaCoreEdit();
-                    newPage.viewModel.ItemID = cg?.ID ?? -1;
-                    App.CustomPage = newPage;
+                    intent.SetAction(OPEN_MANDALA_CORE_EDIT);
                 }
                 MandalaCoreEdit.SuccessCallback = () =>
                 {
                     PartiallyReloadRow(context, appWidgetId, corePosition, middlePosition);
                     Xamarin.Forms.DependencyService.Get<ICloseApplication>().Close();
-                    App.CustomPage = null;
                 };
+                context.StartActivity(intent);
             }
             else
             {
                 if (mg == null)
                 {
-                    var newPage = new MandalaMiddleEdit();
-                    newPage.viewModel.MyItem.CoreGoalID = cg?.ID ?? -1;
-                    newPage.viewModel.MyItem.Position = middlePosition;
-                    App.CustomPage = newPage;
+                    intent.SetAction(OPEN_MANDALA_MIDDLE_ADD);
                 } 
                 else
                 {
-                    var newPage = new MandalaMiddleEdit();
-                    newPage.viewModel.ItemID = mg?.ID ?? -1;
-                    App.CustomPage = newPage;
+                    intent.SetAction(OPEN_MANDALA_MIDDLE_EDIT);
                 }
+
                 MandalaMiddleEdit.SuccessCallback = () =>
                 {
                     PartiallyReloadRow(context, appWidgetId, corePosition, middlePosition);
                     Xamarin.Forms.DependencyService.Get<ICloseApplication>().Close();
-                    App.CustomPage = null;
                 };
+                context.StartActivity(intent);
             }
-            context.StartActivity(intent);
         }
         /*
         ██████╗  ██████╗     ██╗████████╗
