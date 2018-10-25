@@ -271,6 +271,11 @@ namespace ViviArt.Droid
             }
             else
             {
+                if (cg == null)
+                {
+                    Toast.MakeText(context, "핵심목표를 먼저 만들어주세요", ToastLength.Short).Show();
+                    return;
+                }
                 if (mg == null)
                 {
                     intent.SetAction(OPEN_MANDALA_MIDDLE_ADD);
