@@ -6,14 +6,26 @@
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
 >
     <ContentPage.Content>
-        <StackLayout>
+        <AbsoluteLayout>
             <lottie:AnimationView 
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
                 x:Name="animationView" 
                 Animation="ThinkingLamp.json" 
                 Loop="true" 
                 AutoPlay="true"
                 VerticalOptions="FillAndExpand" 
-                HorizontalOptions="FillAndExpand" />
-        </StackLayout>
+                HorizontalOptions="FillAndExpand"
+                />
+            <BoxView 
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        Tapped="OnButtonTapped" 
+                     />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

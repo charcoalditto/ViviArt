@@ -10,5 +10,10 @@ namespace ViviArt
         {
             InitializeComponent();
         }
+
+        public void OnButtonTapped(object sender, EventArgs e)
+        {
+            DependencyService.Get<ICloseApplication>().Close();
+        }
     }
 }
