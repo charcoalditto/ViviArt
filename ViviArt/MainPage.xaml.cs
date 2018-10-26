@@ -29,10 +29,8 @@ namespace ViviArt
         void Clicked_FontSizeNext(object sender, EventArgs e)
         {
             float fontSize = float.Parse(Setting.ValueOf(SettingKey.MandalaHomeWidgetFontSize) ?? "1.0");
-            Console.WriteLine($"font1 {Setting.ValueOf(SettingKey.MandalaHomeWidgetFontSize)}");
             fontSize += 0.1f;
             Setting.Save(SettingKey.MandalaHomeWidgetFontSize, $"{fontSize:F1}");
-            Console.WriteLine($"font2 {Setting.ValueOf(SettingKey.MandalaHomeWidgetFontSize)}");
 
             fontSizeText.Text = $"{fontSize * 100:F0} %";
             DependencyService.Get<IHomeWidget>().RefreshFontSize();
