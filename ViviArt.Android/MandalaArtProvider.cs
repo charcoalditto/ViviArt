@@ -148,39 +148,39 @@ namespace ViviArt.Droid
         설정을 저장해놓고 버튼 UI를 바꾼다 */
         public static void SetModePref(Context context, int appWidgetId, string modeType)
         {
-            AppWidgetManager appWidgetManager = AppWidgetManager.GetInstance(context);
-            Bundle options = appWidgetManager.GetAppWidgetOptions(appWidgetId);
-            options.PutString(PREF_MODE, modeType);
-            appWidgetManager.UpdateAppWidgetOptions(appWidgetId, options);
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(context);
+            ISharedPreferencesEditor editor = prefs.Edit();
+            editor.PutString($"{PREF_MODE}/{appWidgetId}", modeType);
+            editor.Commit();
         }
         public static string GetModePref(Context context, int appWidgetId)
         {
-            Bundle options = AppWidgetManager.GetInstance(context).GetAppWidgetOptions(appWidgetId);
-            return options.GetString(PREF_MODE, MODE_TYPE_CHECK);
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(context);
+            return prefs.GetString($"{PREF_MODE}/{appWidgetId}", MODE_TYPE_CHECK);
         }
         public static void SetDateTypePref(Context context, int appWidgetId, string dateType)
         {
-            AppWidgetManager appWidgetManager = AppWidgetManager.GetInstance(context);
-            Bundle options = appWidgetManager.GetAppWidgetOptions(appWidgetId);
-            options.PutString(PREF_DATE_TYPE, dateType);
-            appWidgetManager.UpdateAppWidgetOptions(appWidgetId, options);
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(context);
+            ISharedPreferencesEditor editor = prefs.Edit();
+            editor.PutString($"{PREF_DATE_TYPE}/{appWidgetId}", dateType);
+            editor.Commit();
         }
         public static string GetDateTypePref(Context context, int appWidgetId)
         {
-            Bundle options = AppWidgetManager.GetInstance(context).GetAppWidgetOptions(appWidgetId);
-            return options.GetString(PREF_DATE_TYPE, DateType.Day);
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(context);
+            return prefs.GetString($"{PREF_DATE_TYPE}/{appWidgetId}", DateType.Day);
         }
         public static void SetTodayPref(Context context, int appWidgetId, DateTime today)
         {
-            AppWidgetManager appWidgetManager = AppWidgetManager.GetInstance(context);
-            Bundle options = appWidgetManager.GetAppWidgetOptions(appWidgetId);
-            options.PutString(PREF_TODAY, today.ToString2());
-            appWidgetManager.UpdateAppWidgetOptions(appWidgetId, options);
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(context);
+            ISharedPreferencesEditor editor = prefs.Edit();
+            editor.PutString($"{PREF_TODAY}/{appWidgetId}", today.ToString2());
+            editor.Commit();
         }
         public static DateTime GetTodayPref(Context context, int appWidgetId)
         {
-            Bundle options = AppWidgetManager.GetInstance(context).GetAppWidgetOptions(appWidgetId);
-            return options.GetString(PREF_TODAY, DateTime.Now.ToString2()).ToDateTime2();
+            ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(context);
+            return prefs.GetString($"{PREF_TODAY}/{appWidgetId}", DateTime.Now.ToString2()).ToDateTime2();
         }
 
         /*
