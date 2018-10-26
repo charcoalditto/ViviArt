@@ -12,7 +12,7 @@ namespace ViviArt
         public App()
         {
             InitializeComponent();
-            MainPage = new LoadingPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

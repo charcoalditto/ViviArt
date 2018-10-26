@@ -46,8 +46,6 @@ namespace ViviArt
             {
                 Title = "저장했습니다",
                 Description = $"RES: {res}",
-                DelayUntil = DateTime.Now.AddSeconds(1)
-                    
             });
 
             SuccessCallback?.Invoke();
