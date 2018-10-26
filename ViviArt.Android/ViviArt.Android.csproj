@@ -79,6 +79,7 @@
     <Compile Include="TodoProvider.cs" />
     <Compile Include="TodoService.cs" />
     <Compile Include="MandalaArtProvider.cs" />
+    <Compile Include="ExternalDir.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

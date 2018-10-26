@@ -4,4 +4,75 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:ViviArt" 
     x:Class="ViviArt.MainPage">
+    <ScrollView>
+        <StackLayout 
+            StyleClass="container">
+            <Label
+                Text="만다라아트"
+                FontSize="Large"
+            />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Row="0" Grid.Column="0"
+                    Text="fontSize"
+                    FontSize="Medium"
+                    />
+                <StackLayout 
+                    Grid.Row="0" Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center"
+                    >
+                    <Image
+                        Source="before"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                    />
+                    <Label 
+                        Text="TextSize"
+                        FontSize="Medium"
+                        VerticalOptions="Center"
+                    />
+                    <Image
+                        Source="next"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                    />    
+                </StackLayout>
+                <Label
+                    Grid.Row="1" Grid.Column="0"
+                    Text="db 원본 경로"
+                    FontSize="Medium"
+                    />
+                <Label
+                    Grid.Row="1" Grid.Column="1"
+                    x:Name="dbOriPath"
+                    FontSize="Medium"
+                    />
+                <Label
+                    Grid.Row="2" Grid.Column="0"
+                    Text="db 복사 경로"
+                    FontSize="Medium"
+                    />
+                <Label
+                    Grid.Row="2" Grid.Column="1"
+                    x:Name="dbCopyPath"
+                    FontSize="Medium"
+                    />
+                <Button 
+                    Grid.Row="3" Grid.Column="0"
+                    Text="DB 내보내기"
+                    StyleClass="main-button"
+                    Clicked="Clicked_Export"/>
+                <Button 
+                    Grid.Row="3" Grid.Column="1"
+                    Text="DB 가져오기"
+                    StyleClass="main-button"
+                    Clicked="Clicked_Import"/>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

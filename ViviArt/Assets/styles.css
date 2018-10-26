@@ -6,3 +6,14 @@
     background-color: white;
 }
 
+.padding-frame
+{
+    width: 10;
+    height: 10;
+}
+
+.main-button {
+    background-color: #00b0e8;
+    color: white;
+    width: 200;
+}
