@@ -30,8 +30,15 @@
                         Source="before"
                         WidthRequest="40"
                         HeightRequest="40"
-                    />
+                    >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="Clicked_FontSizeBefore"
+                            />
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Label 
+                        x:Name="fontSizeText"
                         Text="TextSize"
                         FontSize="Medium"
                         VerticalOptions="Center"
@@ -40,7 +47,13 @@
                         Source="next"
                         WidthRequest="40"
                         HeightRequest="40"
-                    />    
+                    >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="Clicked_FontSizeNext"
+                            />
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
                 <Label
                     Grid.Row="1" Grid.Column="0"

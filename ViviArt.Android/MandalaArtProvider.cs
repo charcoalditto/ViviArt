@@ -25,6 +25,7 @@ namespace ViviArt.Droid
         public const string ACTION_MANDALA_DATE_TYPE = "ACTION_MANDALA_DATE_TYPE";
         public const string ACTION_MANDALA_MODE = "ACTION_MANDALA_MODE";
         public const string ACTION_MANDALA_DATE_MENU = "ACTION_MANDALA_DATE_MENU";
+        public const string ACTION_MANDALA_REFRESH_FONTSIZE = "ACTION_MANDALA_REFRESH_FONTSIZE";
 
         public const string PREF_TODAY = "PREF_TODAY";
         public const string PREF_MODE = "PREF_MODE";
@@ -112,7 +113,6 @@ namespace ViviArt.Droid
             int appWidgetId = intent.GetIntExtra(AppWidgetManager.ExtraAppwidgetId, -1);
 
             string action = intent.Action;
-
             switch (action)
             {
                 case ACTION_MANDALA_ROW_CLICKED:
@@ -132,6 +132,9 @@ namespace ViviArt.Droid
                 case ACTION_MANDALA_DATE_MENU:
                     ChangeTodayPref(context, appWidgetId, intent.GetStringExtra(ACTION_MANDALA_DATE_MENU));
                     UpdateMandalaColors(context, appWidgetId);
+                    break;
+                case ACTION_MANDALA_REFRESH_FONTSIZE:
+                    RefreshFontSize(context);
                     break;
                 default:
                     break;
@@ -504,6 +507,19 @@ namespace ViviArt.Droid
             AppWidgetManager.GetInstance(context).PartiallyUpdateAppWidget(appWidgetId, remoteViews);
         }
 
+        public void RefreshFontSize(Context context)
+        {
+            AppWidgetManager appWidgetManager = AppWidgetManager.GetInstance(context);
+            ComponentName me = new ComponentName(context, Java.Lang.Class.FromType(typeof(MandalaArtProvider)).Name);
+            int[] appWidgetIds = appWidgetManager.GetAppWidgetIds(me);
+
+            foreach(int appWidgetId in appWidgetIds)
+            {
+                RemoteViews remoteViews = GetWidgetRemoteView();
+                SetViewCellFontSize(context, appWidgetId, remoteViews);
+                AppWidgetManager.GetInstance(context).PartiallyUpdateAppWidget(appWidgetId, remoteViews);
+            }
+        }
         /*
         ██████╗ ██╗   ██╗██╗██╗     ██████╗     ██╗   ██╗██╗███████╗██╗    ██╗
         ██╔══██╗██║   ██║██║██║     ██╔══██╗    ██║   ██║██║██╔════╝██║    ██║
@@ -706,8 +722,9 @@ namespace ViviArt.Droid
             int minWidth = options.GetInt(AppWidgetManager.OptionAppwidgetMinWidth);
             int minHeight = options.GetInt(AppWidgetManager.OptionAppwidgetMinHeight);
             float fontSize = minWidth * minHeight / 13000;
-            float ratio = 1f;
+            float ratio = float.Parse(Setting.ValueOf(SettingKey.MandalaHomeWidgetFontSize) ?? "1.0");
             float.TryParse(Setting.ValueOf(SettingKey.MandalaHomeWidgetFontSize), out ratio);
+            fontSize = fontSize * ratio;
 
             for (int corePosition = 0; corePosition < 9; corePosition++)
             {

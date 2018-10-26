@@ -1,46 +1,13 @@
 ﻿using SQLite;
 using System;
-using System.ComponentModel;
 
 namespace ViviArt
 {
-    public class Setting: INotifyPropertyChanged
+    public class Setting
     {
-        public string _key;
         [NotNull, PrimaryKey]
-        public string Key 
-        { 
-            get
-            {
-                return _key;        
-            }
-            set
-            {
-                
-                _key = value;
-                OnPropertyChanged(nameof(Key));
-            }
-        }
-        public string _value;
-        public string Value 
-        {
-            get
-            {
-                return _value;
-            }
-            set
-            {
-                _value = value;
-                OnPropertyChanged(nameof(Value));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
-        {
-            this.PropertyChanged?.Invoke(this,
-              new PropertyChangedEventArgs(propertyName));
-        }
+        public string Key { get; set; }
+        public string Value { get; set; }
 
         public int Save()
         {
@@ -48,11 +15,11 @@ namespace ViviArt
             {
                 try
                 {
-                    return GlobalResources.Current.database.Update(this);
-                }
-                catch (System.InvalidOperationException e)
-                {
                     return GlobalResources.Current.database.Insert(this);
+                }
+                catch (SQLite.SQLiteException e)
+                {
+                    return GlobalResources.Current.database.Update(this);
                 }
             }
         }
@@ -69,6 +36,13 @@ namespace ViviArt
                     return null;
                 }
             }
+        }
+        public static int Save(string key, string value)
+        {
+            var s = new Setting();
+            s.Key = key;
+            s.Value = value;
+            return s.Save();
         }
         public static void SaveMandalaStaticsUpdateDate(DateTime today)
         {
