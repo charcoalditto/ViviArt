@@ -10,5 +10,6 @@
     public static class SettingKey
     {
         public const string MandalaStaticsUpdateDate = "MSUD";
+        public const string MandalaHomeWidgetFontSize = "MHWFS";
     }
 }

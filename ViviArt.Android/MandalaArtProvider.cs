@@ -4,7 +4,7 @@ using Android.App;
 using Android.Appwidget;
 using Android.Content;
 using Android.OS;
-
+using Android.Preferences;
 using Android.Widget;
 using Xamarin.Forms.Platform.Android;
 
@@ -97,6 +97,8 @@ namespace ViviArt.Droid
                 SetViewModeCheck(context, appWidgetId, remoteViews);
                 SetViewDateText(context, appWidgetId, remoteViews);
                 SetViewRows(context, appWidgetId, remoteViews);
+
+                SetViewCellFontSize(context, appWidgetId, remoteViews);
 
                 appWidgetManager.PartiallyUpdateAppWidget(appWidgetId, remoteViews);
             }
@@ -695,6 +697,34 @@ namespace ViviArt.Droid
         {
             RemovePreviousAlarm();
             base.OnDisabled(context);
+        
+        }
+        public void SetViewCellFontSize(Context context, int appWidgetId, RemoteViews remoteViews)
+        {
+            AppWidgetManager appWidgetManager = AppWidgetManager.GetInstance(context);
+            Bundle options = appWidgetManager.GetAppWidgetOptions(appWidgetId);
+            int minWidth = options.GetInt(AppWidgetManager.OptionAppwidgetMinWidth);
+            int minHeight = options.GetInt(AppWidgetManager.OptionAppwidgetMinHeight);
+            float fontSize = minWidth * minHeight / 13000;
+            float ratio = 1f;
+            float.TryParse(Setting.ValueOf(SettingKey.MandalaHomeWidgetFontSize), out ratio);
+
+            for (int corePosition = 0; corePosition < 9; corePosition++)
+            {
+                for (int middlePosition = 0; middlePosition < 9; middlePosition++)
+                {
+                    int resourceId = context.Resources.GetIdentifier($"mandalaGoal{corePosition}{middlePosition}", "id", context.PackageName);
+                    remoteViews.SetFloat(resourceId, "setTextSize", fontSize);
+                }
+            }
+        }
+
+        public override void OnAppWidgetOptionsChanged(Context context, AppWidgetManager appWidgetManager, int appWidgetId, Bundle newOptions)
+        {
+            RemoteViews remoteViews = GetWidgetRemoteView();
+            SetViewCellFontSize(context, appWidgetId, remoteViews);
+            AppWidgetManager.GetInstance(context).PartiallyUpdateAppWidget(appWidgetId, remoteViews);
+            base.OnAppWidgetOptionsChanged(context, appWidgetManager, appWidgetId, newOptions);
         }
     }
 }

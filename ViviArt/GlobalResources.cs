@@ -32,10 +32,12 @@ namespace ViviArt
             //database.DropTable<CoreGoal>();
             //database.DropTable<MiddleGoal>();
             //database.DropTable<MandalaArtStatistics>();
+            //database.DropTable<Setting>();
 
             database.CreateTable<TodoItem>();
             database.CreateTable<CoreGoal>();
             database.CreateTable<MiddleGoal>();
+            database.CreateTable<Setting>();
             database.CreateTable<MandalaArtStatistics>();
 
             //TestData.InsertTestDataGoal();
