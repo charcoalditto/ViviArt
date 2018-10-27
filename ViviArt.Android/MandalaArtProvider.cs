@@ -423,12 +423,12 @@ namespace ViviArt.Droid
             RegisterNextAlarm(context, today.AddDays(1));
 
             // 마지막통계 생성일 ~ 오늘의 새 통계를 만든다.
-            DateTime lastStatDt = Setting.GetMandalaStaticsUpdateDate() ?? today;
+            DateTime lastStatDt = Setting.ValueOf(SettingKey.MandalaStaticsUpdateDate)?.ToDateTime2() ?? today;
+
             foreach(var tmpDate in DateTimeLib.StatDtRange(DateType.Day, lastStatDt, today.AddDays(1)))
             {
-                MandalaArtStatistics.MakeStatAll(tmpDate);    
-                Setting.SaveMandalaStaticsUpdateDate(tmpDate);
-                lastStatDt = tmpDate;
+                MandalaArtStatistics.MakeStatAll(tmpDate);
+                Setting.Save(SettingKey.MandalaStaticsUpdateDate, tmpDate.ToString2());
             }
             // 통계를 새로 만들었으니까 앱을 업데이트 하자
             AppWidgetManager appWidgetManager = AppWidgetManager.GetInstance(context);

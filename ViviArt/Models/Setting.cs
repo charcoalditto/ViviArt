@@ -39,21 +39,7 @@ namespace ViviArt
         }
         public static int Save(string key, string value)
         {
-            var s = new Setting();
-            s.Key = key;
-            s.Value = value;
-            return s.Save();
-        }
-        public static void SaveMandalaStaticsUpdateDate(DateTime today)
-        {
-            var s = new Setting();
-            s.Key = SettingKey.MandalaStaticsUpdateDate;
-            s.Value = today.ToString2();
-            s.Save();
-        }
-        public static DateTime? GetMandalaStaticsUpdateDate()
-        {
-            return ValueOf(SettingKey.MandalaStaticsUpdateDate)?.ToDateTime2() ?? null;
+            return (new Setting() { Key = key, Value = value }).Save();
         }
 
         public static Xamarin.Forms.Color GetColor(int corePosition)
