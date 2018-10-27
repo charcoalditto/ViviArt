@@ -74,9 +74,10 @@ namespace ViviArt
                 File.Copy(oriPath, backupPath, true);
                 INotificationResult result = await DependencyService.Get<IToastNotificator>().Notify(new NotificationOptions()
                 {
-                    Title = "가져오기 성공",
+                    Title = "가져오기 성공!",
                     Description = $"{backupPath}",
-                });    
+                });
+                DependencyService.Get<IHomeWidget>().ImportMandalaGoal();
             }
             catch (Exception ex)
             {

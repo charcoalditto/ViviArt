@@ -84,7 +84,6 @@ namespace ViviArt.Droid
                     }
                 case MandalaArtProvider.OPEN_MANDALA_CORE_CHART:
                     {
-                        Console.WriteLine($"today {Intent.GetStringExtra(MandalaArtProvider.EXTRA_TODAY)}");
                         var newPage = new MandalaCoreChart();
                         var myInput = new MandalaCoreChartInput()
                         {
@@ -97,7 +96,6 @@ namespace ViviArt.Droid
                     }
                 case MandalaArtProvider.OPEN_MANDALA_MIDDLE_CHART:
                     {
-                        Console.WriteLine($"today {Intent.GetStringExtra(MandalaArtProvider.EXTRA_TODAY)}");
                         var newPage = new MandalaMiddleChart();
                         var myInput = new MandalaMiddleChartInput()
                         {

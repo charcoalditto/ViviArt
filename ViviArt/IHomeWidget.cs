@@ -4,5 +4,6 @@ namespace ViviArt
     public interface IHomeWidget
     {
         void RefreshFontSize();
-    }
+        void ImportMandalaGoal();
+}
 }
