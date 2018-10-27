@@ -6,6 +6,7 @@ using System;
 using Android.Preferences;
 using Xamarin.Forms;
 using Plugin.Toasts;
+using Plugin.Permissions;
 
 namespace ViviArt.Droid
 {
@@ -25,9 +26,14 @@ namespace ViviArt.Droid
             //toast plugin setting
             DependencyService.Register<ToastNotification>();
             ToastNotification.Init(this);
-
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
         protected override void OnResume()

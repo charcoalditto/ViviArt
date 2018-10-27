@@ -1,5 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Plugin.Toasts;
 using Xamarin.Forms;
 
@@ -38,6 +41,8 @@ namespace ViviArt
 
         async void Clicked_Export(object sender, System.EventArgs e)
         {
+            await CheckLocationPermission();
+
             var oriPath = GlobalResources.Current.dbPath;
             var backupPath = DependencyService.Get<IExternalDir>().GetDocumentPath(GlobalResources.Current.dbName);
             try
@@ -60,9 +65,10 @@ namespace ViviArt
         }
         async void Clicked_Import(object sender, System.EventArgs e)
         {
+            await CheckLocationPermission();
+
             var oriPath = DependencyService.Get<IExternalDir>().GetDocumentPath(GlobalResources.Current.dbName);
             var backupPath = GlobalResources.Current.dbPath;
-
             try
             {
                 File.Copy(oriPath, backupPath, true);
@@ -79,6 +85,16 @@ namespace ViviArt
                     Title = "가져오기 실패",
                     Description = $"{ex.Message}",
                 });    
+            }
+        }
+        public async Task CheckLocationPermission()
+        {
+            // 권한요청 
+            var status = PermissionStatus.Unknown;
+            status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
+            if (status != PermissionStatus.Granted)
+            {
+                status = await PermissionUtil.CheckPermissions(Permission.Storage);
             }
         }
     }

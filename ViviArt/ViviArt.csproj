@@ -13,6 +13,7 @@
     <PackageReference Include="DateTimeExtensions" Version="5.1.0" />
     <PackageReference Include="Microcharts" Version="0.7.1" />
     <PackageReference Include="Microcharts.Forms" Version="0.7.1" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\MandalaStatChart.cs" />
